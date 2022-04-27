@@ -6,7 +6,7 @@ Proyecto para crear aplicación de Electron JS con manejador de tareas Gulp y li
 
 #### Inicializar
 
-Es necesario instalar las dependencias para comenzar a trabajar con el proyecto.
+El comando instala las dependencias necesarias para correr el proyecto.
 
 ```bash
 npm run initialize
@@ -21,7 +21,7 @@ npm run tasks
 ```
 #### Correr la aplicación
 
-El siguiente permite la ejecución de la aplicación.
+El siguiente comando permite la ejecución de la aplicación.
 
 ```bash
 npm run start
@@ -39,9 +39,9 @@ npm run compile
 
 ## Configuración adicional
 
-#### Consultas SQLite
-Para ejecutar consultas en la base de datos local consultar librería [querys](https://github.com/angeljsus/querys).
 
+#### Consultas SQLite
+Para realizar consultas dentro de la base de datos local consultar las funciones presentes dentro de librería [querys](https://github.com/angeljsus/querys).
 #### Recargar en automático
 
 Para recargar la aplicación en automático permitir la ejecución de las siguientes líenas de código existentes dentro del archivo de configuración de la aplicación que se encuentra en la siguiente ruta `BUILD/app.js`
