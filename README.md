@@ -40,7 +40,7 @@ npm run compile
 ## Configuración adicional
 
 #### Consultas SQLite
-Para ejecutar consultas en la base de datos local consultar librería [querys](https://github.com/angeljsus/querys).
+Para realizar consultas dentro de la base de datos local consultar las funciones presentes dentro de librería [querys](https://github.com/angeljsus/querys).
 
 #### Recargar en automático
 
@@ -51,4 +51,4 @@ require('electron-reload')(__dirname, {
 });
 ```
 ***IMPORTANTE:*** 
-Es necesario que el código para recargar la aplicación este dehabilitado antes de generar el instalador. El código genera un error al ejecutar la aplicación en caso de estar habilitado.
+Es necesario que el código para recargar la aplicación este deshabilitado antes de generar el instalador. El código genera un error al ejecutar la aplicación en caso de estar habilitado.
