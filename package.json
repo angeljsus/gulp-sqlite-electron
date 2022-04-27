@@ -1,0 +1,30 @@
+{
+  "name": "gulp_tasks",
+  "description": "Ejecutar tareas de compilación de scripts",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "scripts": {
+    "tasks": "gulp",
+    "initialize": "npm install && cd BUILD && npm install",
+    "compile": "cd BUILD && npm run build",
+    "start": "cd BUILD && npm run start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "babel-preset-env": "^1.7.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-plumber": "^1.2.1",
+    "gulp-stylus": "^2.7.1",
+    "gulp-uglify": "^3.0.2",
+    "gulp-webp": "^4.0.1",
+    "nib": "^1.1.2"
+  }
+}

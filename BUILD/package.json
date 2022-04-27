@@ -1,0 +1,22 @@
+{
+  "name": "proyecto_app",
+  "productName": "Proyecto App",
+  "version": "1.0.0",
+  "description": "Descripción de la aplicación",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "keywords": [],
+  "build": {
+    "appId": "Proyecto_id"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^18.1.0",
+    "electron-builder": "^23.0.3",
+    "electron-reload": "^2.0.0-alpha.1"
+  }
+}
