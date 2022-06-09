@@ -15,7 +15,6 @@
   "devDependencies": {
     "@babel/core": "^7.17.9",
     "@babel/preset-env": "^7.16.11",
-    "babel-preset-env": "^1.7.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
@@ -23,8 +22,10 @@
     "gulp-minify-css": "^1.2.4",
     "gulp-plumber": "^1.2.1",
     "gulp-stylus": "^2.7.1",
+    "gulp-tap": "^2.0.0",
     "gulp-uglify": "^3.0.2",
-    "gulp-webp": "^4.0.1",
-    "nib": "^1.1.2"
+    "nib": "^1.1.2",
+    "path": "^0.12.7",
+    "webp-converter": "^2.3.3"
   }
 }

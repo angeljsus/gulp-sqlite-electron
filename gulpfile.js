@@ -8,8 +8,10 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const plumber = require('gulp-plumber');
 const imagemin = require('gulp-imagemin');
-const webp = require('gulp-webp');
-
+const webp = require('webp-converter');
+const path = require('path');
+const tap = require('gulp-tap');
+webp.grant_permission();
 let DEV_DIR = 'DEV';
 let OUTPUT_DIR = 'BUILD';
 
@@ -25,7 +27,8 @@ let config = {
   },
   images: {
     watch: DEV_DIR+'/images/**/*',
-    output: OUTPUT_DIR+'/images/'
+    output: OUTPUT_DIR+'/images/',
+    procces: DEV_DIR+'/images/catch/',
   },
 };
 
@@ -53,14 +56,26 @@ task('build:js',function(){
   .on('error', onError);
 });
 
-task('build:images',function(){
-  return src(config.images.watch) 
+
+
+task('build:images', function(){
+  let file = '';
+  return src(config.images.watch)
   .pipe(plumber())
   .pipe(imagemin())
-  .pipe(webp())    
-  .pipe(dest(config.images.output))
-  .on('error', onError);
-});
+  .pipe(tap(function(file) {
+    file = path.basename(file.path).split('.');
+    if (file.length == 2) {
+      if (file[1] == 'gif') {
+        webp.gwebp(DEV_DIR+'/images/'+file[0]+'.'+file[1],config.images.output+file[0]+'.webp')
+      } else {
+        webp.cwebp(DEV_DIR+'/images/'+file[0]+'.'+file[1],config.images.output+file[0]+'.webp','-q 60')
+      }
+      console.log('Convertida: ' + file[0] + '.webp')
+    }
+  }))
+})
+
 
 task('build:html',function(){
   return src(DEV_DIR+'/*.html') 
@@ -74,6 +89,7 @@ task('watch:changes',function(){
   watch(config.images.watch, series('build:images'));
   watch(DEV_DIR+'/*.html', series('build:html'));
 });
+
 
 task('default',series('build:html','build:css','build:js','build:images', 'watch:changes'));
 

@@ -1,4 +1,4 @@
-const { select, insert, update,  deleteReg } = require('./js/querys.js')
+const { select, insert, update,  deleteReg } = require('./js/querys.min.js')
 
 document.addEventListener('DOMContentLoaded', initalize);
 
