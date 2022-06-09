@@ -74,6 +74,7 @@ task('build:images', function(){
       console.log('Convertida: ' + file[0] + '.webp')
     }
   }))
+  .on('error', onError);
 })
 
 
